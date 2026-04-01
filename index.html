@@ -127,7 +127,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: transparent;
+      
+      background-image: url('images/hero.jpg');
+      background-size: cover;
+      background-position: center 30%;
     }
 
     /* KW watermark monogram */
@@ -703,28 +706,13 @@
         gap: 10px;
       }
     }
-    .hero-bg-photo {
+    
+    .hero::after {
+      content: '';
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.35) 100%);
       z-index: 0;
-      opacity: 1;
-      pointer-events: none;
-      user-select: none;
-    }
-    .hero-bg-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        135deg,
-        rgba(0,0,0,0.82) 0%,
-        rgba(0,0,0,0.6) 50%,
-        rgba(0,0,0,0.4) 100%
-      );
       pointer-events: none;
     }
     </style>
@@ -739,9 +727,7 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <img src="images/hero.jpg" alt="" class="hero-bg-photo" aria-hidden="true">
-    <div class="hero-bg-overlay" aria-hidden="true"></div>
-    <div class="hero__accent"></div>
+<div class="hero__accent"></div>
     <div class="hero__monogram" aria-hidden="true">KW</div>
 
     <div class="hero__content">
